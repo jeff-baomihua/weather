@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the wjc/weather.
+ *
+ * (c) Jeff-wangjunchang<jcyiqfun@163.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Wjc\Weather;
 
 use GuzzleHttp\Client;
@@ -8,6 +18,7 @@ use Wjc\Weather\Exceptions\InvalidArgumentException;
 class Weather
 {
     protected $key;
+
     protected $guzzleOptions = [];
 
     public function __construct($key)
@@ -51,7 +62,7 @@ class Weather
             'key' => $this->key,
             'city' => $city,
             'output' => \strtolower($format),
-            'extensions' =>  \strtolower($type),
+            'extensions' => \strtolower($type),
         ]);
 
         try {
